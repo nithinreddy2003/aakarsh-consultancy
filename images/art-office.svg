@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 340" role="img" aria-labelledby="art-office-title">
+  <title id="art-office-title">Our office in Somajiguda, Hyderabad</title>
+
+  <defs>
+    <linearGradient id="off-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E8F1F9" />
+      <stop offset="1" stop-color="#D7E6F4" />
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="560" height="340" rx="24" fill="url(#off-sky)" />
+
+  <!-- skyline behind -->
+  <g opacity=".45">
+    <rect x="52" y="150" width="54" height="130" rx="8" fill="#9FBFDC" />
+    <rect x="116" y="186" width="42" height="94" rx="8" fill="#B9D2E9" />
+    <rect x="406" y="168" width="48" height="112" rx="8" fill="#9FBFDC" />
+    <rect x="462" y="200" width="40" height="80" rx="8" fill="#B9D2E9" />
+  </g>
+
+  <!-- main building -->
+  <g>
+    <rect x="174" y="92" width="212" height="188" rx="14" fill="#fff" />
+    <rect x="174" y="92" width="212" height="40" rx="14" fill="#096BB3" />
+    <rect x="196" y="106" width="86" height="10" rx="5" fill="#fff" opacity=".9" />
+
+    <!-- windows -->
+    <g fill="#E8F1F9">
+      <rect x="196" y="152" width="40" height="30" rx="6" />
+      <rect x="248" y="152" width="40" height="30" rx="6" />
+      <rect x="300" y="152" width="40" height="30" rx="6" />
+      <rect x="196" y="194" width="40" height="30" rx="6" />
+      <rect x="300" y="194" width="40" height="30" rx="6" />
+    </g>
+    <rect x="248" y="194" width="40" height="30" rx="6" fill="#096BB3" opacity=".22" />
+
+    <!-- entrance -->
+    <path d="M252 280v-32a28 28 0 0156 0v32z" fill="#096BB3" opacity=".14" />
+    <path d="M252 280v-32a28 28 0 0156 0v32" fill="none" stroke="#096BB3" stroke-width="2.5" />
+  </g>
+
+  <!-- ground -->
+  <rect x="32" y="278" width="496" height="4" rx="2" fill="#2F2F2F" opacity=".18" />
+
+  <!-- location pin -->
+  <g transform="translate(372 44)">
+    <path d="M28 76c0 0-24-17-24-40a24 24 0 0148 0c0 23-24 40-24 40z" fill="#E30C17" />
+    <circle cx="28" cy="35" r="9" fill="#fff" />
+  </g>
+</svg>
