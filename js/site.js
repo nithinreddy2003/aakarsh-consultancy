@@ -102,19 +102,26 @@
     window.requestAnimationFrame(frame);
   }
 
-  /* Arrows. Nudging back from the very start first hops forward by half the
-     track to the matching spot in the duplicate set, so "previous" loops too.
+  /* Arrows. Nudging forward past the last original slide wraps back to the
+     start seamlessly via the duplicate set. Nudging back from the very start
+     first hops forward to the matching spot in the duplicate set.
      holdUntil keeps the auto-scroll off while the smooth scroll plays out. */
   function nudge(direction) {
     var step = slideStep();
+    var distance = loopDistance();
 
-    /* Claim the hold before touching scrollLeft, so the hop below cannot be
-       undone by wrap() running from the resulting scroll event. */
-    holdUntil = Date.now() + 700;
-
+    /* Moving left from near the start: jump to clone set first */
     if (direction < 0 && viewport.scrollLeft < step + 2) {
-      viewport.scrollLeft += loopDistance();
+      viewport.scrollLeft += distance;
     }
+
+    /* Moving right past the original slides: wrap back to start */
+    if (direction > 0 && viewport.scrollLeft >= distance - step) {
+      viewport.scrollLeft -= distance;
+    }
+
+    /* Set hold time after any positioning jumps */
+    holdUntil = Date.now() + 700;
 
     /* Honour reduced motion for the arrows too: jump instead of gliding. */
     var behavior = reduceMotion.matches ? "auto" : "smooth";
@@ -220,4 +227,85 @@
   each(function (stack) {
     observer.observe(stack);
   });
+})();
+
+/* Hero Carousel - Auto-scrolling image slider
+   Automatically cycles through images every 4 seconds with smooth fade transitions.
+   Clicking dots allows manual navigation. */
+(function () {
+  "use strict";
+
+  var carousel = document.querySelector(".hero-carousel");
+  if (!carousel) {
+    return;
+  }
+
+  var slides = carousel.querySelectorAll(".carousel-slide");
+  var dots = carousel.querySelectorAll(".carousel-dots .dot");
+  
+  if (!slides.length || !dots.length) {
+    return;
+  }
+
+  var currentSlide = 0;
+  var autoPlayInterval = null;
+  var SLIDE_DURATION = 4000; // 4 seconds per slide
+
+  function showSlide(index) {
+    // Remove active class from all slides and dots
+    slides.forEach(function(slide) {
+      slide.classList.remove("active");
+    });
+    dots.forEach(function(dot) {
+      dot.classList.remove("active");
+    });
+
+    // Add active class to current slide and dot
+    slides[index].classList.add("active");
+    dots[index].classList.add("active");
+    currentSlide = index;
+  }
+
+  function nextSlide() {
+    var next = (currentSlide + 1) % slides.length;
+    showSlide(next);
+  }
+
+  function startAutoPlay() {
+    stopAutoPlay();
+    autoPlayInterval = setInterval(nextSlide, SLIDE_DURATION);
+  }
+
+  function stopAutoPlay() {
+    if (autoPlayInterval) {
+      clearInterval(autoPlayInterval);
+      autoPlayInterval = null;
+    }
+  }
+
+  // Add click event to dots
+  dots.forEach(function(dot, index) {
+    dot.addEventListener("click", function() {
+      showSlide(index);
+      stopAutoPlay();
+      // Restart autoplay after manual interaction
+      setTimeout(startAutoPlay, SLIDE_DURATION);
+    });
+  });
+
+  // Pause on hover
+  carousel.addEventListener("mouseenter", stopAutoPlay);
+  carousel.addEventListener("mouseleave", startAutoPlay);
+
+  // Pause when page is not visible
+  document.addEventListener("visibilitychange", function() {
+    if (document.hidden) {
+      stopAutoPlay();
+    } else {
+      startAutoPlay();
+    }
+  });
+
+  // Start the carousel
+  startAutoPlay();
 })();
