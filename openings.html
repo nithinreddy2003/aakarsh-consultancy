@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Current Job Openings | Aakarsh Consultancy</title>
+  <meta name="description"
+    content="Browse current job openings at Aakarsh Consultancy. From IT to manufacturing, freshers to CXOs — find your next role.">
+  <link rel="icon" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css?v=26" rel="stylesheet">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="navbar navbar-expand-lg site-nav" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo.png" width="2172" height="724" alt="Aakarsh Consultancy Enterprises Limited">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="industries.html">Industries</a></li>
+          <li class="nav-item"><a class="nav-link" href="careers.html" aria-current="page">Careers</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="btn btn-brand nav-cta" href="contact.html">Hire Talent</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <section class="hero hero--sm">
+      <span class="dots dots--tr" aria-hidden="true"></span>
+      <div class="container">
+        <p class="eyebrow">Current openings</p>
+        <h1>Find your next opportunity.</h1>
+        <p class="mb-0 col-lg-7">Browse our current job openings across IT and Non-IT sectors. Apply directly or send
+          us your CV for future opportunities.</p>
+      </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="row g-3 mb-4">
+          <div class="col-lg-4">
+            <label for="filterDepartment" class="form-label">Department</label>
+            <select class="form-select" id="filterDepartment">
+              <option value="">All Departments</option>
+              <option value="it">Information Technology</option>
+              <option value="engineering">Engineering</option>
+              <option value="manufacturing">Manufacturing</option>
+              <option value="sales">Sales & Marketing</option>
+              <option value="finance">Finance & Accounts</option>
+              <option value="hr">Human Resources</option>
+            </select>
+          </div>
+          <div class="col-lg-4">
+            <label for="filterLocation" class="form-label">Location</label>
+            <select class="form-select" id="filterLocation">
+              <option value="">All Locations</option>
+              <option value="hyderabad">Hyderabad</option>
+              <option value="bangalore">Bangalore</option>
+              <option value="mumbai">Mumbai</option>
+              <option value="pune">Pune</option>
+              <option value="delhi">Delhi NCR</option>
+              <option value="chennai">Chennai</option>
+            </select>
+          </div>
+          <div class="col-lg-4">
+            <label for="filterExperience" class="form-label">Experience Level</label>
+            <select class="form-select" id="filterExperience">
+              <option value="">All Levels</option>
+              <option value="fresher">Fresher (0-2 years)</option>
+              <option value="mid">Mid-Level (3-7 years)</option>
+              <option value="senior">Senior (8-15 years)</option>
+              <option value="executive">Executive (15+ years)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Job Listings -->
+    <section class="section">
+      <div class="container">
+        <div class="row mb-4">
+          <div class="col">
+            <p class="text-muted"><strong id="jobCount">24</strong> positions available</p>
+          </div>
+        </div>
+
+        <div class="row g-4" id="jobListings">
+
+          <!-- Job 1 -->
+          <div class="col-lg-6 job-item" data-department="it" data-location="hyderabad" data-experience="senior">
+            <div class="panel panel--blue">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div>
+                  <span class="badge bg-primary mb-2">IT</span>
+                  <h3 class="h4 mb-1">Senior Java Developer</h3>
+                  <p class="text-muted mb-0">Leading Product Company</p>
+                </div>
+              </div>
+              <div class="mb-3">
+                <p class="mb-2"><strong>Location:</strong> Hyderabad</p>
+                <p class="mb-2"><strong>Experience:</strong> 8-12 years</p>
+                <p class="mb-2"><strong>Skills:</strong> Java, Spring Boot, Microservices, AWS</p>
+              </div>
+              <p class="mb-3">Looking for experienced Java developer to build scalable enterprise applications with
+                modern tech stack.</p>
+              <a href="contact.html" class="btn btn-brand btn-sm">Apply Now</a>
+            </div>
+          </div>
+
+          <!-- Job 2 -->
+          <div class="col-lg-6 job-item" data-department="engineering" data-location="pune" data-experience="mid">
+            <div class="panel panel--teal">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div>
+                  <span class="badge bg-success mb-2">Engineering</span>
+                  <h3 class="h4 mb-1">Mechanical Design Engineer</h3>
+                  <p class="text-muted mb-0">Automobile Manufacturing</p>
+                </div>
+              </div>
+              <div class="mb-3">
+                <p class="mb-2"><strong>Location:</strong> Pune</p>
+                <p class="mb-2"><strong>Experience:</strong> 5-8 years</p>
+                <p class="mb-2"><strong>Skills:</strong> CATIA, AutoCAD, GD&T, Product Design</p>
+              </div>
+              <p class="mb-3">Design and develop automotive components with focus on innovation and quality.</p>
+              <a href="contact.html" class="btn btn-brand btn-sm">Apply Now</a>
+            </div>
+          </div>
+
+          <!-- Job 3 -->
+          <div class="col-lg-6 job-item" data-department="it" data-location="bangalore" data-experience="mid">
+            <div class="panel panel--purple">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div>
+                  <span class="badge bg-info mb-2">IT</span>
+                  <h3 class="h4 mb-1">React.js Frontend Developer</h3>
+                  <p class="text-muted mb-0">SaaS Product Company</p>
+                </div>
+              </div>
+              <div class="mb-3">
+                <p class="mb-2"><strong>Location:</strong> Bangalore</p>
+                <p class="mb-2"><strong>Experience:</strong> 4-7 years</p>
+                <p class="mb-2"><strong>Skills:</strong> React, TypeScript, Redux, REST APIs</p>
+              </div>
+              <p class="mb-3">Build modern, responsive web applications for enterprise SaaS platform.</p>
+              <a href="contact.html" class="btn btn-brand btn-sm">Apply Now</a>
+            </div>
+          </div>
+
+          <!-- Job 4 -->
+          <div class="col-lg-6 job-item" data-department="manufacturing" data-location="hyderabad"
+            data-experience="senior">
+            <div class="panel panel--green">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div>
+                  <span class="badge bg-success mb-2">Manufacturing</span>
+                  <h3 class="h4 mb-1">Production Manager</h3>
+                  <p class="text-muted mb-0">Pharmaceutical Manufacturing</p>
+                </div>
+              </div>
+              <div class="mb-3">
+                <p class="mb-2"><strong>Location:</strong> Hyderabad</p>
+                <p class="mb-2"><strong>Experience:</strong> 10-15 years</p>
+                <p class="mb-2"><strong>Skills:</strong> Production Planning, Quality Control, Lean Manufacturing</p>
+              </div>
+              <p class="mb-3">Lead production operations ensuring quality, compliance, and efficiency.</p>
+              <a href="contact.html" class="btn btn-brand btn-sm">Apply Now</a>
+            </div>
+          </div>
+
+          <!-- Job 5 -->
+          <div class="col-lg-6 job-item" data-department="sales" data-location="mumbai" data-experience="mid">
+            <div class="panel panel--red">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div>
+                  <span class="badge bg-danger mb-2">Sales</span>
+                  <h3 class="h4 mb-1">Sales Manager - B2B</h3>
+                  <p class="text-muted mb-0">Industrial Equipment Company</p>
+                </div>
+              </div>
+              <div class="mb-3">
+                <p class="mb-2"><strong>Location:</strong> Mumbai</p>
+                <p class="mb-2"><strong>Experience:</strong> 6-10 years</p>
+                <p class="mb-2"><strong>Skills:</strong> B2B Sales, Key Account Management, CRM</p>
+              </div>
+              <p class="mb-3">Drive sales growth by managing key accounts and developing new business.</p>
+              <a href="contact.html" class="btn btn-brand btn-sm">Apply Now</a>
+            </div>
+          </div>
+
+          <!-- Job 6 -->
+          <div class="col-lg-6 job-item" data-department="it" data-location="hyderabad" data-experience="executive">
+            <div class="panel panel--blue">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div>
+                  <span class="badge bg-dark mb-2">Executive</span>
+                  <h3 class="h4 mb-1">Chief Technology Officer (CTO)</h3>
+                  <p class="text-muted mb-0">Fintech Startup</p>
+                </div>
+              </div>
+              <div class="mb-3">
+                <p class="mb-2"><strong>Location:</strong> Hyderabad</p>
+                <p class="mb-2"><strong>Experience:</strong> 15+ years</p>
+                <p class="mb-2"><strong>Skills:</strong> Technology Strategy, Team Leadership, Cloud Architecture</p>
+              </div>
+              <p class="mb-3">Lead technology vision and engineering teams for fast-growing fintech company.</p>
+              <a href="contact.html" class="btn btn-brand btn-sm">Apply Now</a>
+            </div>
+          </div>
+
+          <!-- Job 7 -->
+          <div class="col-lg-6 job-item" data-department="engineering" data-location="chennai" data-experience="mid">
+            <div class="panel panel--teal">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div>
+                  <span class="badge bg-success mb-2">Engineering</span>
+                  <h3 class="h4 mb-1">Electrical Engineer</h3>
+                  <p class="text-muted mb-0">Power Generation Company</p>
+                </div>
+              </div>
+              <div class="mb-3">
+                <p class="mb-2"><strong>Location:</strong> Chennai</p>
+                <p class="mb-2"><strong>Experience:</strong> 5-9 years</p>
+                <p class="mb-2"><strong>Skills:</strong> Power Systems, PLC, SCADA, Electrical Design</p>
+              </div>
+              <p class="mb-3">Design and maintain electrical systems for power generation facilities.</p>
+              <a href="contact.html" class="btn btn-brand btn-sm">Apply Now</a>
+            </div>
+          </div>
+
+          <!-- Job 8 -->
+          <div class="col-lg-6 job-item" data-department="it" data-location="bangalore" data-experience="senior">
+            <div class="panel panel--purple">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div>
+                  <span class="badge bg-info mb-2">IT</span>
+                  <h3 class="h4 mb-1">DevOps Engineer</h3>
+                  <p class="text-muted mb-0">E-commerce Platform</p>
+                </div>
+              </div>
+              <div class="mb-3">
+                <p class="mb-2"><strong>Location:</strong> Bangalore</p>
+                <p class="mb-2"><strong>Experience:</strong> 7-10 years</p>
+                <p class="mb-2"><strong>Skills:</strong> Kubernetes, Docker, Jenkins, AWS, Terraform</p>
+              </div>
+              <p class="mb-3">Build and maintain CI/CD pipelines and cloud infrastructure at scale.</p>
+              <a href="contact.html" class="btn btn-brand btn-sm">Apply Now</a>
+            </div>
+          </div>
+
+          <!-- Job 9 -->
+          <div class="col-lg-6 job-item" data-department="hr" data-location="mumbai" data-experience="mid">
+            <div class="panel panel--green">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div>
+                  <span class="badge bg-warning mb-2">HR</span>
+                  <h3 class="h4 mb-1">HR Business Partner</h3>
+                  <p class="text-muted mb-0">Multinational Corporation</p>
+                </div>
+              </div>
+              <div class="mb-3">
+                <p class="mb-2"><strong>Location:</strong> Mumbai</p>
+                <p class="mb-2"><strong>Experience:</strong> 6-9 years</p>
+                <p class="mb-2"><strong>Skills:</strong> Talent Management, Employee Relations, Performance Management
+                </p>
+              </div>
+              <p class="mb-3">Partner with business leaders on talent strategy and organizational development.</p>
+              <a href="contact.html" class="btn btn-brand btn-sm">Apply Now</a>
+            </div>
+          </div>
+
+          <!-- Job 10 -->
+          <div class="col-lg-6 job-item" data-department="finance" data-location="delhi" data-experience="senior">
+            <div class="panel panel--red">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div>
+                  <span class="badge bg-secondary mb-2">Finance</span>
+                  <h3 class="h4 mb-1">Financial Controller</h3>
+                  <p class="text-muted mb-0">Manufacturing Group</p>
+                </div>
+              </div>
+              <div class="mb-3">
+                <p class="mb-2"><strong>Location:</strong> Delhi NCR</p>
+                <p class="mb-2"><strong>Experience:</strong> 12-16 years</p>
+                <p class="mb-2"><strong>Skills:</strong> Financial Reporting, Audit, Compliance, ERP</p>
+              </div>
+              <p class="mb-3">Oversee financial operations, reporting, and compliance for manufacturing group.</p>
+              <a href="contact.html" class="btn btn-brand btn-sm">Apply Now</a>
+            </div>
+          </div>
+
+          <!-- Job 11 -->
+          <div class="col-lg-6 job-item" data-department="it" data-location="pune" data-experience="mid">
+            <div class="panel panel--blue">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div>
+                  <span class="badge bg-primary mb-2">IT</span>
+                  <h3 class="h4 mb-1">Data Scientist</h3>
+                  <p class="text-muted mb-0">AI/ML Product Company</p>
+                </div>
+              </div>
+              <div class="mb-3">
+                <p class="mb-2"><strong>Location:</strong> Pune</p>
+                <p class="mb-2"><strong>Experience:</strong> 4-7 years</p>
+                <p class="mb-2"><strong>Skills:</strong> Python, Machine Learning, TensorFlow, SQL</p>
+              </div>
+              <p class="mb-3">Develop ML models and analytics solutions for enterprise customers.</p>
+              <a href="contact.html" class="btn btn-brand btn-sm">Apply Now</a>
+            </div>
+          </div>
+
+          <!-- Job 12 -->
+          <div class="col-lg-6 job-item" data-department="manufacturing" data-location="chennai" data-experience="mid">
+            <div class="panel panel--teal">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div>
+                  <span class="badge bg-success mb-2">Manufacturing</span>
+                  <h3 class="h4 mb-1">Quality Assurance Manager</h3>
+                  <p class="text-muted mb-0">Automotive Parts Manufacturing</p>
+                </div>
+              </div>
+              <div class="mb-3">
+                <p class="mb-2"><strong>Location:</strong> Chennai</p>
+                <p class="mb-2"><strong>Experience:</strong> 7-11 years</p>
+                <p class="mb-2"><strong>Skills:</strong> ISO Standards, Six Sigma, Quality Systems</p>
+              </div>
+              <p class="mb-3">Lead quality assurance initiatives ensuring product excellence and compliance.</p>
+              <a href="contact.html" class="btn btn-brand btn-sm">Apply Now</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- No Results Message -->
+        <div id="noResults" class="text-center py-5" style="display: none;">
+          <h3>No positions found</h3>
+          <p class="text-muted">Try adjusting your filters to see more results.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section--tight bg-light">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8">
+            <h2 class="h3 mb-3">Don't see the right role?</h2>
+            <p class="mb-4">Send us your CV and we'll contact you when a matching opportunity opens up.</p>
+            <a href="contact.html" class="btn btn-brand">Submit Your CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <section class="section--cta">
+    <div class="container">
+      <div class="cta-box">
+        <div class="row align-items-center">
+          <div class="col-lg-8 mb-4 mb-lg-0">
+            <h2>Tell us who you need to hire.</h2>
+            <p>Share a job description and we will come back with screened, interview-ready profiles.</p>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a href="contact.html" class="btn btn-accent me-2">Send a requirement</a>
+            <a href="tel:+919866306435" class="btn btn-outline-light-2 mt-2 mt-xl-0">Call us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-foot">
+    <div class="container">
+
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="foot-logo mb-3">
+            <img src="images/logo.png" width="2172" height="724" alt="Aakarsh Consultancy Enterprises Limited">
+          </div>
+          <p class="lead-sm">Executive search, recruitment and staffing for product companies and core industries since
+            1997.
+            Hyderabad.</p>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h2 class="foot-h">Services</h2>
+          <ul class="foot-links">
+            <li><a href="recruitment.html">Permanent Recruitment</a></li>
+            <li><a href="executive-search.html">Executive Search</a></li>
+            <li><a href="staffing.html">Staffing</a></li>
+            <li><a href="rpo.html">RPO</a></li>
+            <li><a href="skill-development.html">Skill Development</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h2 class="foot-h">Company</h2>
+          <ul class="foot-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="industries.html">Industries We Serve</a></li>
+            <li><a href="openings.html">Current Job Openings</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h2 class="foot-h">Quick Links</h2>
+          <ul class="foot-links">
+            <li><a href="employers.html">For Employers</a></li>
+            <li><a href="job-seekers.html">For Job Seekers</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h2 class="foot-h">Contact</h2>
+          <address>3rd Floor, 6-3-1090/C/4, Raj Bhavan Road, Somajiguda, Hyderabad – 500082</address>
+          <ul class="foot-links">
+            <li><a href="tel:+919866306435">+91 98663 06435</a></li>
+            <li><a href="tel:+919989724433">+91 99897 24433</a></li>
+            <li><a href="mailto:venkat@aakarshconsultancy.com">venkat@aakarshconsultancy.com</a></li>
+            <li><a href="openings.html">Current openings</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="copyright d-md-flex justify-content-between">
+        <p class="mb-0">&copy; <span id="year">2026</span> Aakarsh Consultancy Enterprises Limited. All rights
+          reserved.</p>
+        <p class="mb-0">Hyderabad, India</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/site.js?v=3"></script>
+  <script>
+    // Simple filter functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const filterDept = document.getElementById('filterDepartment');
+      const filterLoc = document.getElementById('filterLocation');
+      const filterExp = document.getElementById('filterExperience');
+      const jobItems = document.querySelectorAll('.job-item');
+      const noResults = document.getElementById('noResults');
+      const jobCount = document.getElementById('jobCount');
+
+      function filterJobs() {
+        const deptValue = filterDept.value;
+        const locValue = filterLoc.value;
+        const expValue = filterExp.value;
+        let visibleCount = 0;
+
+        jobItems.forEach(item => {
+          const deptMatch = !deptValue || item.dataset.department === deptValue;
+          const locMatch = !locValue || item.dataset.location === locValue;
+          const expMatch = !expValue || item.dataset.experience === expValue;
+
+          if (deptMatch && locMatch && expMatch) {
+            item.style.display = '';
+            visibleCount++;
+          } else {
+            item.style.display = 'none';
+          }
+        });
+
+        jobCount.textContent = visibleCount;
+        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
+
+      filterDept.addEventListener('change', filterJobs);
+      filterLoc.addEventListener('change', filterJobs);
+      filterExp.addEventListener('change', filterJobs);
+    });
+  </script>
+</body>
+
+</html>

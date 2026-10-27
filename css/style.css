@@ -800,7 +800,7 @@ a.svc-card:hover {
 /* 8 ---------------------------------------------------- stats, steps, quote */
 .stat-row {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 24px;
 }
 
@@ -824,6 +824,9 @@ a.svc-card:hover {
 
 .stat--green { background: #EDFAF3; border-top-color: #16A34A; }
 .stat--green b { color: #16A34A; }
+
+.stat--purple { background: #F3EFFE; border-top-color: #7C3AED; }
+.stat--purple b { color: #7C3AED; }
 
 .stat b {
   display: block;
