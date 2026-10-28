@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Login | Aakarsh Consultancy</title>
+  <meta name="description" content="Admin login for Aakarsh Consultancy management dashboard.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css?v=26" rel="stylesheet">
+  <style>
+    .login-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #096BB3 0%, #0d7ec8 50%, #007ab8 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .login-container::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+    }
+
+    .login-container::after {
+      content: "";
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 400px;
+      height: 400px;
+      background: rgba(227, 12, 23, 0.08);
+      border-radius: 50%;
+    }
+
+    .login-card {
+      width: 100%;
+      max-width: 420px;
+      padding: 32px;
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 10;
+    }
+
+    .login-logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .login-logo img {
+      height: 56px;
+      width: auto;
+      filter: drop-shadow(0 4px 12px rgba(9, 107, 179, 0.15));
+    }
+
+    .login-card h1 {
+      font-size: 1.5rem;
+      margin-bottom: 6px;
+      color: var(--ink);
+      text-align: center;
+      font-weight: 800;
+      background: linear-gradient(135deg, #096BB3, #E30C17);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .login-card .text-muted {
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      color: #7F8B99;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: var(--ink);
+      font-size: 0.9rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px 14px;
+      border: 2px solid #E8F1F9;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      background: #F8FAFC;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--brand);
+      background: var(--white);
+      box-shadow: 0 0 0 3px rgba(9, 107, 179, 0.1);
+    }
+
+    .form-control::placeholder {
+      color: #A0AEC0;
+    }
+
+    .alert {
+      padding: 12px 14px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      font-size: 0.9rem;
+      display: none;
+      border-left: 4px solid;
+      background-size: 20px 20px;
+    }
+
+    .alert.show {
+      display: block;
+      animation: slideDown 0.3s ease;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .alert-danger {
+      background-color: #FEF2F2;
+      color: #991b1b;
+      border-color: #FCA5A5;
+    }
+
+    .alert-success {
+      background-color: #F0FDF4;
+      color: #166534;
+      border-color: #86EFAC;
+    }
+
+    .btn-login {
+      width: 100%;
+      padding: 12px 18px;
+      background: linear-gradient(135deg, var(--brand), #0d7ec8);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 12px rgba(9, 107, 179, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .btn-login:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(9, 107, 179, 0.4);
+      background: linear-gradient(135deg, #0d7ec8, #096BB3);
+    }
+
+    .btn-login:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    .btn-login:disabled {
+      background: linear-gradient(135deg, #cbd5e1, #b0bcc4);
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    .loading {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background-color: currentColor;
+      border-radius: 50%;
+      margin-left: 6px;
+      animation: blink 1.4s infinite;
+    }
+
+    @keyframes blink {
+      0%, 20%, 50%, 80%, 100% {
+        opacity: 0.4;
+      }
+      40% {
+        opacity: 1;
+      }
+      60% {
+        opacity: 0.4;
+      }
+    }
+
+    .footer-link {
+      text-align: center;
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid #E8F1F9;
+      font-size: 0.9rem;
+      color: #7F8B99;
+    }
+
+    .footer-link a {
+      color: var(--brand);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-link a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 480px) {
+      .login-card {
+        margin: 16px;
+        max-width: calc(100% - 32px);
+        padding: 24px 20px;
+      }
+
+      .login-card h1 {
+        font-size: 1.3rem;
+      }
+
+      .login-logo img {
+        height: 48px;
+      }
+
+      .btn-login {
+        padding: 11px 14px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <div class="login-logo">
+        <img src="images/logo.png" alt="Aakarsh Consultancy">
+      </div>
+      <h1>Admin Login</h1>
+      <p class="text-muted">Management Dashboard</p>
+
+      <div id="alertBox" class="alert"></div>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email" class="form-label">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            class="form-control"
+            placeholder="Enter your email"
+            required
+            autocomplete="email"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            placeholder="Enter your password"
+            required
+            autocomplete="current-password"
+          >
+        </div>
+
+        <button type="submit" class="btn-login" id="submitBtn">
+          Sign In
+        </button>
+      </form>
+
+      <div class="footer-link">
+        <a href="index.html">← Back to website</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/supabase-client.js"></script>
+  <script>
+    (async function() {
+      "use strict";
+
+      // Check if already logged in and authorized
+      try {
+        const isAuth = await window.isAuthenticated();
+        if (isAuth) {
+          const user = await window.getCurrentUser();
+          if (user) {
+            const admin = await window.isAdmin(user.id);
+            if (admin) {
+              window.location.href = 'admin.html';
+              return;
+            }
+          }
+        }
+      } catch (err) {
+        console.error('Auth check error:', err);
+      }
+
+      const form = document.getElementById('loginForm');
+      const emailInput = document.getElementById('email');
+      const passwordInput = document.getElementById('password');
+      const submitBtn = document.getElementById('submitBtn');
+      const alertBox = document.getElementById('alertBox');
+
+      function showAlert(message, type = 'danger') {
+        alertBox.textContent = message;
+        alertBox.className = `alert show alert-${type}`;
+      }
+
+      function hideAlert() {
+        alertBox.className = 'alert';
+        alertBox.textContent = '';
+      }
+
+      function setLoading(loading) {
+        submitBtn.disabled = loading;
+        if (loading) {
+          submitBtn.textContent = 'Signing in' + (Array(4).fill(null).map(() => '.').join(''));
+          const dots = submitBtn.querySelector('.loading');
+          if (!dots) {
+            const span = document.createElement('span');
+            span.className = 'loading';
+            submitBtn.appendChild(span);
+          }
+        } else {
+          submitBtn.textContent = 'Sign In';
+        }
+      }
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        hideAlert();
+
+        const email = emailInput.value.trim();
+        const password = passwordInput.value;
+
+        if (!email || !password) {
+          showAlert('Please enter both email and password.');
+          return;
+        }
+
+        setLoading(true);
+
+        try {
+          const client = await window.getSupabaseClient();
+
+          // Sign in with Supabase
+          const { data, error } = await client.auth.signInWithPassword({
+            email,
+            password
+          });
+
+          if (error) {
+            showAlert(`Login failed: ${error.message}`);
+            setLoading(false);
+            return;
+          }
+
+          if (!data.session) {
+            showAlert('No session created. Please try again.');
+            setLoading(false);
+            return;
+          }
+
+          // Check if user is admin
+          const userId = data.session.user.id;
+          const isUserAdmin = await window.isAdmin(userId);
+
+          if (!isUserAdmin) {
+            // Sign out unauthorized user
+            await client.auth.signOut();
+            showAlert('You are not authorized to access the admin dashboard.');
+            setLoading(false);
+            return;
+          }
+
+          // Success - redirect to admin dashboard
+          showAlert('Login successful! Redirecting...', 'success');
+          setTimeout(() => {
+            window.location.href = 'admin.html';
+          }, 1000);
+
+        } catch (err) {
+          console.error('Login error:', err);
+          showAlert(`An error occurred: ${err.message}`);
+          setLoading(false);
+        }
+      });
+    })();
+  </script>
+</body>
+
+</html>

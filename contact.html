@@ -29,6 +29,7 @@
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="achievements.html">Achievements</a></li>
           <li class="nav-item"><a class="nav-link" href="industries.html">Industries</a></li>
           <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html" aria-current="page">Contact</a></li>
@@ -45,14 +46,14 @@
       <div class="container">
         <p class="eyebrow">Contact</p>
         <h1>Let's build your team.</h1>
-        <p class="mb-0 col-lg-7">"Your employees are the foundation on which business is built." Whether you have a hiring requirement or are looking for your next role — we respond quickly.</p>
+        <p class="mb-0">"Your employees are the foundation on which business is built." Whether you have a hiring requirement or are looking for your next role – we respond quickly.</p>
       </div>
     </section>
 
-    <!-- ── FOR EMPLOYERS ──────────────────────────────────────────── -->
-    <section class="section section--white" style="padding:3rem 0;">
+    <!-- -- FOR EMPLOYERS -------------------------------------------- -->
+    <section class="section section--white" style="padding:1.5rem 0;">
       <div class="container">
-        <div class="row align-items-start g-5">
+        <div class="row align-items-start g-3">
           <div class="col-lg-4">
             <p class="section-eyebrow">For employers</p>
             <h2 class="section-title">Tell us about the people you need.</h2>
@@ -65,13 +66,16 @@
             </ul>
           </div>
           <div class="col-lg-8">
-            <div class="panel" style="background:#EBF4FC; border-top:4px solid #096BB3; padding:24px;">
-              <p class="section-eyebrow mb-1">Staffing enquiry</p>
-              <h3 class="mb-3" style="font-size:1.1rem;">Send a requirement</h3>
-              <form id="employer-form" class="row g-2" novalidate>
+            <div class="panel" style="background:#EBF4FC; border-top:4px solid #096BB3; padding:16px;">
+              <h3 style="font-size:0.9rem; font-weight:500; margin:0;"><span style="color:#096BB3; font-weight:600; letter-spacing:0.05em;">Staffing enquiry</span> | Send a requirement</h3>
+              <form id="employer-form" class="row g-1" novalidate style="margin-top:12px;">
                 <div class="col-md-6">
                   <label class="form-label" for="ef-name">Your name</label>
                   <input class="form-control" id="ef-name" name="name" type="text" autocomplete="name" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="ef-company">Company Name</label>
+                  <input class="form-control" id="ef-company" name="company" type="text" autocomplete="organization" required>
                 </div>
                 <div class="col-md-6">
                   <label class="form-label" for="ef-email">Work email</label>
@@ -96,9 +100,9 @@
                 <div class="col-12">
                   <label class="form-label" for="ef-msg">Job titles, location and requirements</label>
                   <textarea class="form-control" id="ef-msg" name="message" rows="3"
-                    placeholder="E.g. 2 Java developers in Hyderabad, joining by December…" required></textarea>
+                    placeholder="E.g. 2 Java developers in Hyderabad, joining by December–" required></textarea>
                 </div>
-                <div class="col-12 mt-1">
+                <div class="col-12 mt-0">
                   <button class="btn btn-brand w-100" type="submit" id="ef-btn">Send enquiry &rarr;</button>
                 </div>
                 <div class="col-12">
@@ -111,26 +115,25 @@
       </div>
     </section>
 
-    <!-- ── FOR CANDIDATES ─────────────────────────────────────────── -->
-    <section class="section" style="padding:3rem 0;">
+    <!-- -- FOR CANDIDATES ------------------------------------------- -->
+    <section class="section" style="padding:1.5rem 0;" id="candidate-registration">
       <div class="container">
-        <div class="row align-items-start g-5">
+        <div class="row align-items-start g-3">
           <div class="col-lg-4">
             <p class="section-eyebrow">For candidates</p>
             <h2 class="section-title">Looking for your next role?</h2>
             <p class="mb-3">Register with Aakarsh and we will match you with opportunities that suit your skills.</p>
             <ul class="tick-list tick-list--one">
-              <li>Free to register — always</li>
+              <li>Free to register – always</li>
               <li>IT and non-IT roles across India</li>
               <li>Freshers to CXO level</li>
               <li>A consultant who keeps you informed</li>
             </ul>
           </div>
           <div class="col-lg-8">
-            <div class="panel" style="background:#E8F6F5; border-top:4px solid #0D9488; padding:24px;">
-              <p class="section-eyebrow mb-1">Candidate registration</p>
-              <h3 class="mb-3" style="font-size:1.1rem;">Register for work</h3>
-              <form id="candidate-form" class="row g-2" novalidate>
+            <div class="panel" style="background:#E8F6F5; border-top:4px solid #0D9488; padding:16px;">
+              <h3 style="font-size:0.9rem; font-weight:500; margin:0;"><span style="color:#0D9488; font-weight:600; letter-spacing:0.05em;">Candidate registration</span> | Register for work</h3>
+              <form id="candidate-form" class="row g-1" novalidate style="margin-top:12px;">
                 <div class="col-md-6">
                   <label class="form-label" for="cf-name">Your name</label>
                   <input class="form-control" id="cf-name" name="name" type="text" autocomplete="name" required>
@@ -152,10 +155,33 @@
                     <option>Any</option>
                   </select>
                 </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="cf-location">Current Location</label>
+                  <input class="form-control" id="cf-location" name="location" type="text" placeholder="Enter your current city / location" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="cf-industry">Preferred Industry</label>
+                  <select class="form-select" id="cf-industry" name="industry" required>
+                    <option value="">Select your preferred industry</option>
+                    <option>IT &amp; Software</option>
+                    <option>Banking &amp; Financial Services</option>
+                    <option>Healthcare &amp; Pharmaceuticals</option>
+                    <option>Manufacturing &amp; Engineering</option>
+                    <option>Retail &amp; E-commerce</option>
+                    <option>Telecom</option>
+                    <option>Education</option>
+                    <option>Logistics &amp; Supply Chain</option>
+                    <option>Automotive</option>
+                    <option>Construction &amp; Infrastructure</option>
+                    <option>Human Resources &amp; Recruitment</option>
+                    <option>BPO &amp; Customer Support</option>
+                    <option>Other</option>
+                  </select>
+                </div>
                 <div class="col-12">
                   <label class="form-label" for="cf-msg">Experience, skills and availability</label>
                   <textarea class="form-control" id="cf-msg" name="message" rows="3"
-                    placeholder="Recent roles, key skills, when you can start…" required></textarea>
+                    placeholder="Recent roles, key skills, when you can start–" required></textarea>
                 </div>
                 <div class="col-12">
                   <label class="form-label" for="cf-resume">Upload resume <span class="text-brand">(PDF / DOC / DOCX, max 5 MB)</span></label>
@@ -163,7 +189,7 @@
                     accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
                   <p class="form-note mt-1 mb-0" id="cf-resume-note"></p>
                 </div>
-                <div class="col-12 mt-1">
+                <div class="col-12 mt-0">
                   <button class="btn btn-brand w-100" type="submit" id="cf-btn">Register now &rarr;</button>
                 </div>
                 <div class="col-12">
@@ -176,10 +202,10 @@
       </div>
     </section>
 
-    <!-- ── CONTACT DETAILS ────────────────────────────────────────── -->
-    <section class="section section--white" style="padding:3rem 0;">
+    <!-- -- CONTACT DETAILS ------------------------------------------ -->
+    <section class="section section--white" style="padding:1.5rem 0;">
       <div class="container">
-        <div class="row align-items-start g-5">
+        <div class="row align-items-start g-3">
           <div class="col-lg-4">
             <p class="section-eyebrow">Our office</p>
             <h2 class="section-title">Find us in Hyderabad.</h2>
@@ -245,8 +271,9 @@
         </div>
 
         <div class="col-6 col-lg-2">
-          <h2 class="foot-h">Legal</h2>
+          <h2 class="foot-h">Resources</h2>
           <ul class="foot-links">
+            <li><a href="roles-by-level.html">Roles by Level</a></li>
             <li><a href="privacy-policy.html">Privacy Policy</a></li>
             <li><a href="terms-conditions.html">Terms & Conditions</a></li>
           </ul>
@@ -276,13 +303,16 @@
     (function () {
       var GF_URL = 'https://docs.google.com/forms/d/e/1FAIpQLScMdhOVnQIMDPOTuhHrrldPGZHyLtVk8RDdWmTi7z2KNs-iqQ/formResponse';
 
-      function submitToGF(name, email, phone, who, message) {
+      function submitToGF(name, email, phone, who, message, company, location, industry) {
         var body = new URLSearchParams();
         body.append('entry.1063148674', name);
         body.append('entry.1287723477', email);
         body.append('entry.1533987873', phone);
         body.append('entry.972398714',  who);
         body.append('entry.704444221',  message);
+        if (company) body.append('entry.COMPANY_FIELD_ID', company); // Replace COMPANY_FIELD_ID with actual Google Form field ID
+        if (location) body.append('entry.LOCATION_FIELD_ID', location); // Replace LOCATION_FIELD_ID with actual Google Form field ID
+        if (industry) body.append('entry.INDUSTRY_FIELD_ID', industry); // Replace INDUSTRY_FIELD_ID with actual Google Form field ID
         fetch(GF_URL, { method: 'POST', mode: 'no-cors',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: body.toString() }).catch(function(){});
@@ -311,9 +341,12 @@
           var phone   = (form.elements['phone']   || {}).value || '';
           var message = (form.elements['message'] || {}).value || '';
           var extra   = (form.elements[extraMsg]  || {}).value || '';
+          var company = (form.elements['company'] || {}).value || '';
+          var location = (form.elements['location'] || {}).value || '';
+          var industry = (form.elements['industry'] || {}).value || '';
           if (extra) message = extra + '\n\n' + message;
 
-          submitToGF(name.trim(), email.trim(), phone.trim(), who, message.trim());
+          submitToGF(name.trim(), email.trim(), phone.trim(), who, message.trim(), company.trim(), location.trim(), industry.trim());
 
           setTimeout(function () {
             status.textContent = '\u2713 Received. We will be in touch shortly.';
@@ -350,6 +383,8 @@
       }
     })();
   </script>
+
 </body>
 
 </html>
+

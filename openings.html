@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 
 <head>
@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/style.css?v=26" rel="stylesheet">
+  <link href="css/style.css?v=27" rel="stylesheet">
 </head>
 
 <body>
@@ -30,6 +30,7 @@
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="achievements.html">Achievements</a></li>
           <li class="nav-item"><a class="nav-link" href="industries.html">Industries</a></li>
           <li class="nav-item"><a class="nav-link" href="careers.html" aria-current="page">Careers</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -46,326 +47,76 @@
       <div class="container">
         <p class="eyebrow">Current openings</p>
         <h1>Find your next opportunity.</h1>
-        <p class="mb-0 col-lg-7">Browse our current job openings across IT and Non-IT sectors. Apply directly or send
+        <p class="mb-0">Browse our current job openings across IT and Non-IT sectors. Apply directly or send
           us your CV for future opportunities.</p>
       </div>
     </section>
 
-    <!-- Filter Section -->
+    <!-- Search & Filter Section -->
     <section class="section section--tight">
       <div class="container">
-        <div class="row g-3 mb-4">
-          <div class="col-lg-4">
-            <label for="filterDepartment" class="form-label">Department</label>
-            <select class="form-select" id="filterDepartment">
-              <option value="">All Departments</option>
-              <option value="it">Information Technology</option>
-              <option value="engineering">Engineering</option>
-              <option value="manufacturing">Manufacturing</option>
-              <option value="sales">Sales & Marketing</option>
-              <option value="finance">Finance & Accounts</option>
-              <option value="hr">Human Resources</option>
-            </select>
-          </div>
-          <div class="col-lg-4">
-            <label for="filterLocation" class="form-label">Location</label>
-            <select class="form-select" id="filterLocation">
-              <option value="">All Locations</option>
-              <option value="hyderabad">Hyderabad</option>
-              <option value="bangalore">Bangalore</option>
-              <option value="mumbai">Mumbai</option>
-              <option value="pune">Pune</option>
-              <option value="delhi">Delhi NCR</option>
-              <option value="chennai">Chennai</option>
-            </select>
-          </div>
-          <div class="col-lg-4">
-            <label for="filterExperience" class="form-label">Experience Level</label>
-            <select class="form-select" id="filterExperience">
-              <option value="">All Levels</option>
-              <option value="fresher">Fresher (0-2 years)</option>
-              <option value="mid">Mid-Level (3-7 years)</option>
-              <option value="senior">Senior (8-15 years)</option>
-              <option value="executive">Executive (15+ years)</option>
-            </select>
+        <!-- Search Bar -->
+        <div class="row g-2 mb-3">
+          <div class="col-12">
+            <label for="searchKeyword" class="form-label">Search Jobs</label>
+            <input 
+              type="text" 
+              id="searchKeyword" 
+              class="form-control" 
+              placeholder="Search by job title, company, skills, or location..."
+              autocomplete="off"
+            >
           </div>
         </div>
+
+
+
+
       </div>
     </section>
 
     <!-- Job Listings -->
-    <section class="section">
+    <section class="section section--tight">
       <div class="container">
-        <div class="row mb-4">
+        <div class="row mb-2">
           <div class="col">
-            <p class="text-muted"><strong id="jobCount">24</strong> positions available</p>
+            <p class="text-muted"><strong id="jobCount">0</strong> positions available</p>
           </div>
         </div>
 
-        <div class="row g-4" id="jobListings">
+        <!-- Loading State -->
+        <div id="loadingState" class="text-center py-5">
+          <p class="text-muted">Loading positions...</p>
+        </div>
 
-          <!-- Job 1 -->
-          <div class="col-lg-6 job-item" data-department="it" data-location="hyderabad" data-experience="senior">
-            <div class="panel panel--blue">
-              <div class="d-flex justify-content-between align-items-start mb-3">
-                <div>
-                  <span class="badge bg-primary mb-2">IT</span>
-                  <h3 class="h4 mb-1">Senior Java Developer</h3>
-                  <p class="text-muted mb-0">Leading Product Company</p>
-                </div>
-              </div>
-              <div class="mb-3">
-                <p class="mb-2"><strong>Location:</strong> Hyderabad</p>
-                <p class="mb-2"><strong>Experience:</strong> 8-12 years</p>
-                <p class="mb-2"><strong>Skills:</strong> Java, Spring Boot, Microservices, AWS</p>
-              </div>
-              <p class="mb-3">Looking for experienced Java developer to build scalable enterprise applications with
-                modern tech stack.</p>
-              <a href="contact.html" class="btn btn-brand btn-sm">Apply Now</a>
-            </div>
-          </div>
-
-          <!-- Job 2 -->
-          <div class="col-lg-6 job-item" data-department="engineering" data-location="pune" data-experience="mid">
-            <div class="panel panel--teal">
-              <div class="d-flex justify-content-between align-items-start mb-3">
-                <div>
-                  <span class="badge bg-success mb-2">Engineering</span>
-                  <h3 class="h4 mb-1">Mechanical Design Engineer</h3>
-                  <p class="text-muted mb-0">Automobile Manufacturing</p>
-                </div>
-              </div>
-              <div class="mb-3">
-                <p class="mb-2"><strong>Location:</strong> Pune</p>
-                <p class="mb-2"><strong>Experience:</strong> 5-8 years</p>
-                <p class="mb-2"><strong>Skills:</strong> CATIA, AutoCAD, GD&T, Product Design</p>
-              </div>
-              <p class="mb-3">Design and develop automotive components with focus on innovation and quality.</p>
-              <a href="contact.html" class="btn btn-brand btn-sm">Apply Now</a>
-            </div>
-          </div>
-
-          <!-- Job 3 -->
-          <div class="col-lg-6 job-item" data-department="it" data-location="bangalore" data-experience="mid">
-            <div class="panel panel--purple">
-              <div class="d-flex justify-content-between align-items-start mb-3">
-                <div>
-                  <span class="badge bg-info mb-2">IT</span>
-                  <h3 class="h4 mb-1">React.js Frontend Developer</h3>
-                  <p class="text-muted mb-0">SaaS Product Company</p>
-                </div>
-              </div>
-              <div class="mb-3">
-                <p class="mb-2"><strong>Location:</strong> Bangalore</p>
-                <p class="mb-2"><strong>Experience:</strong> 4-7 years</p>
-                <p class="mb-2"><strong>Skills:</strong> React, TypeScript, Redux, REST APIs</p>
-              </div>
-              <p class="mb-3">Build modern, responsive web applications for enterprise SaaS platform.</p>
-              <a href="contact.html" class="btn btn-brand btn-sm">Apply Now</a>
-            </div>
-          </div>
-
-          <!-- Job 4 -->
-          <div class="col-lg-6 job-item" data-department="manufacturing" data-location="hyderabad"
-            data-experience="senior">
-            <div class="panel panel--green">
-              <div class="d-flex justify-content-between align-items-start mb-3">
-                <div>
-                  <span class="badge bg-success mb-2">Manufacturing</span>
-                  <h3 class="h4 mb-1">Production Manager</h3>
-                  <p class="text-muted mb-0">Pharmaceutical Manufacturing</p>
-                </div>
-              </div>
-              <div class="mb-3">
-                <p class="mb-2"><strong>Location:</strong> Hyderabad</p>
-                <p class="mb-2"><strong>Experience:</strong> 10-15 years</p>
-                <p class="mb-2"><strong>Skills:</strong> Production Planning, Quality Control, Lean Manufacturing</p>
-              </div>
-              <p class="mb-3">Lead production operations ensuring quality, compliance, and efficiency.</p>
-              <a href="contact.html" class="btn btn-brand btn-sm">Apply Now</a>
-            </div>
-          </div>
-
-          <!-- Job 5 -->
-          <div class="col-lg-6 job-item" data-department="sales" data-location="mumbai" data-experience="mid">
-            <div class="panel panel--red">
-              <div class="d-flex justify-content-between align-items-start mb-3">
-                <div>
-                  <span class="badge bg-danger mb-2">Sales</span>
-                  <h3 class="h4 mb-1">Sales Manager - B2B</h3>
-                  <p class="text-muted mb-0">Industrial Equipment Company</p>
-                </div>
-              </div>
-              <div class="mb-3">
-                <p class="mb-2"><strong>Location:</strong> Mumbai</p>
-                <p class="mb-2"><strong>Experience:</strong> 6-10 years</p>
-                <p class="mb-2"><strong>Skills:</strong> B2B Sales, Key Account Management, CRM</p>
-              </div>
-              <p class="mb-3">Drive sales growth by managing key accounts and developing new business.</p>
-              <a href="contact.html" class="btn btn-brand btn-sm">Apply Now</a>
-            </div>
-          </div>
-
-          <!-- Job 6 -->
-          <div class="col-lg-6 job-item" data-department="it" data-location="hyderabad" data-experience="executive">
-            <div class="panel panel--blue">
-              <div class="d-flex justify-content-between align-items-start mb-3">
-                <div>
-                  <span class="badge bg-dark mb-2">Executive</span>
-                  <h3 class="h4 mb-1">Chief Technology Officer (CTO)</h3>
-                  <p class="text-muted mb-0">Fintech Startup</p>
-                </div>
-              </div>
-              <div class="mb-3">
-                <p class="mb-2"><strong>Location:</strong> Hyderabad</p>
-                <p class="mb-2"><strong>Experience:</strong> 15+ years</p>
-                <p class="mb-2"><strong>Skills:</strong> Technology Strategy, Team Leadership, Cloud Architecture</p>
-              </div>
-              <p class="mb-3">Lead technology vision and engineering teams for fast-growing fintech company.</p>
-              <a href="contact.html" class="btn btn-brand btn-sm">Apply Now</a>
-            </div>
-          </div>
-
-          <!-- Job 7 -->
-          <div class="col-lg-6 job-item" data-department="engineering" data-location="chennai" data-experience="mid">
-            <div class="panel panel--teal">
-              <div class="d-flex justify-content-between align-items-start mb-3">
-                <div>
-                  <span class="badge bg-success mb-2">Engineering</span>
-                  <h3 class="h4 mb-1">Electrical Engineer</h3>
-                  <p class="text-muted mb-0">Power Generation Company</p>
-                </div>
-              </div>
-              <div class="mb-3">
-                <p class="mb-2"><strong>Location:</strong> Chennai</p>
-                <p class="mb-2"><strong>Experience:</strong> 5-9 years</p>
-                <p class="mb-2"><strong>Skills:</strong> Power Systems, PLC, SCADA, Electrical Design</p>
-              </div>
-              <p class="mb-3">Design and maintain electrical systems for power generation facilities.</p>
-              <a href="contact.html" class="btn btn-brand btn-sm">Apply Now</a>
-            </div>
-          </div>
-
-          <!-- Job 8 -->
-          <div class="col-lg-6 job-item" data-department="it" data-location="bangalore" data-experience="senior">
-            <div class="panel panel--purple">
-              <div class="d-flex justify-content-between align-items-start mb-3">
-                <div>
-                  <span class="badge bg-info mb-2">IT</span>
-                  <h3 class="h4 mb-1">DevOps Engineer</h3>
-                  <p class="text-muted mb-0">E-commerce Platform</p>
-                </div>
-              </div>
-              <div class="mb-3">
-                <p class="mb-2"><strong>Location:</strong> Bangalore</p>
-                <p class="mb-2"><strong>Experience:</strong> 7-10 years</p>
-                <p class="mb-2"><strong>Skills:</strong> Kubernetes, Docker, Jenkins, AWS, Terraform</p>
-              </div>
-              <p class="mb-3">Build and maintain CI/CD pipelines and cloud infrastructure at scale.</p>
-              <a href="contact.html" class="btn btn-brand btn-sm">Apply Now</a>
-            </div>
-          </div>
-
-          <!-- Job 9 -->
-          <div class="col-lg-6 job-item" data-department="hr" data-location="mumbai" data-experience="mid">
-            <div class="panel panel--green">
-              <div class="d-flex justify-content-between align-items-start mb-3">
-                <div>
-                  <span class="badge bg-warning mb-2">HR</span>
-                  <h3 class="h4 mb-1">HR Business Partner</h3>
-                  <p class="text-muted mb-0">Multinational Corporation</p>
-                </div>
-              </div>
-              <div class="mb-3">
-                <p class="mb-2"><strong>Location:</strong> Mumbai</p>
-                <p class="mb-2"><strong>Experience:</strong> 6-9 years</p>
-                <p class="mb-2"><strong>Skills:</strong> Talent Management, Employee Relations, Performance Management
-                </p>
-              </div>
-              <p class="mb-3">Partner with business leaders on talent strategy and organizational development.</p>
-              <a href="contact.html" class="btn btn-brand btn-sm">Apply Now</a>
-            </div>
-          </div>
-
-          <!-- Job 10 -->
-          <div class="col-lg-6 job-item" data-department="finance" data-location="delhi" data-experience="senior">
-            <div class="panel panel--red">
-              <div class="d-flex justify-content-between align-items-start mb-3">
-                <div>
-                  <span class="badge bg-secondary mb-2">Finance</span>
-                  <h3 class="h4 mb-1">Financial Controller</h3>
-                  <p class="text-muted mb-0">Manufacturing Group</p>
-                </div>
-              </div>
-              <div class="mb-3">
-                <p class="mb-2"><strong>Location:</strong> Delhi NCR</p>
-                <p class="mb-2"><strong>Experience:</strong> 12-16 years</p>
-                <p class="mb-2"><strong>Skills:</strong> Financial Reporting, Audit, Compliance, ERP</p>
-              </div>
-              <p class="mb-3">Oversee financial operations, reporting, and compliance for manufacturing group.</p>
-              <a href="contact.html" class="btn btn-brand btn-sm">Apply Now</a>
-            </div>
-          </div>
-
-          <!-- Job 11 -->
-          <div class="col-lg-6 job-item" data-department="it" data-location="pune" data-experience="mid">
-            <div class="panel panel--blue">
-              <div class="d-flex justify-content-between align-items-start mb-3">
-                <div>
-                  <span class="badge bg-primary mb-2">IT</span>
-                  <h3 class="h4 mb-1">Data Scientist</h3>
-                  <p class="text-muted mb-0">AI/ML Product Company</p>
-                </div>
-              </div>
-              <div class="mb-3">
-                <p class="mb-2"><strong>Location:</strong> Pune</p>
-                <p class="mb-2"><strong>Experience:</strong> 4-7 years</p>
-                <p class="mb-2"><strong>Skills:</strong> Python, Machine Learning, TensorFlow, SQL</p>
-              </div>
-              <p class="mb-3">Develop ML models and analytics solutions for enterprise customers.</p>
-              <a href="contact.html" class="btn btn-brand btn-sm">Apply Now</a>
-            </div>
-          </div>
-
-          <!-- Job 12 -->
-          <div class="col-lg-6 job-item" data-department="manufacturing" data-location="chennai" data-experience="mid">
-            <div class="panel panel--teal">
-              <div class="d-flex justify-content-between align-items-start mb-3">
-                <div>
-                  <span class="badge bg-success mb-2">Manufacturing</span>
-                  <h3 class="h4 mb-1">Quality Assurance Manager</h3>
-                  <p class="text-muted mb-0">Automotive Parts Manufacturing</p>
-                </div>
-              </div>
-              <div class="mb-3">
-                <p class="mb-2"><strong>Location:</strong> Chennai</p>
-                <p class="mb-2"><strong>Experience:</strong> 7-11 years</p>
-                <p class="mb-2"><strong>Skills:</strong> ISO Standards, Six Sigma, Quality Systems</p>
-              </div>
-              <p class="mb-3">Lead quality assurance initiatives ensuring product excellence and compliance.</p>
-              <a href="contact.html" class="btn btn-brand btn-sm">Apply Now</a>
-            </div>
-          </div>
-
+        <!-- Jobs Container (Single Column) -->
+        <div class="row" id="jobListings" style="display: none;">
+          <div class="col-12"></div>
         </div>
 
         <!-- No Results Message -->
         <div id="noResults" class="text-center py-5" style="display: none;">
           <h3>No positions found</h3>
-          <p class="text-muted">Try adjusting your filters to see more results.</p>
+          <p class="text-muted">Try adjusting your search or filters to see more results.</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="errorState" class="text-center py-5" style="display: none;">
+          <h3>Unable to load positions</h3>
+          <p class="text-muted">Please try again later.</p>
         </div>
 
       </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="section section--tight bg-light">
+    <section class="section section--tight">
       <div class="container">
         <div class="row justify-content-center text-center">
           <div class="col-lg-8">
-            <h2 class="h3 mb-3">Don't see the right role?</h2>
-            <p class="mb-4">Send us your CV and we'll contact you when a matching opportunity opens up.</p>
-            <a href="contact.html" class="btn btn-brand">Submit Your CV</a>
+            <h2 class="h3 mb-2">Don't see the right role?</h2>
+            <p class="mb-3">Send us your CV and we'll contact you when a matching opportunity opens up.</p>
+            <a href="contact.html#candidate-registration" class="btn btn-brand">Submit Your CV</a>
           </div>
         </div>
       </div>
@@ -427,8 +178,8 @@
         <div class="col-6 col-lg-2">
           <h2 class="foot-h">Quick Links</h2>
           <ul class="foot-links">
-            <li><a href="employers.html">For Employers</a></li>
-            <li><a href="job-seekers.html">For Job Seekers</a></li>
+            <li><a href="contact.html">For Employers</a></li>
+            <li><a href="careers.html">For Job Seekers</a></li>
             <li><a href="privacy-policy.html">Privacy Policy</a></li>
             <li><a href="terms-conditions.html">Terms & Conditions</a></li>
           </ul>
@@ -455,44 +206,240 @@
 
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/site.js?v=3"></script>
+  <script src="js/supabase-client.js"></script>
   <script>
-    // Simple filter functionality
-    document.addEventListener('DOMContentLoaded', function () {
-      const filterDept = document.getElementById('filterDepartment');
-      const filterLoc = document.getElementById('filterLocation');
-      const filterExp = document.getElementById('filterExperience');
-      const jobItems = document.querySelectorAll('.job-item');
-      const noResults = document.getElementById('noResults');
-      const jobCount = document.getElementById('jobCount');
+    (async function() {
+      "use strict";
 
-      function filterJobs() {
-        const deptValue = filterDept.value;
-        const locValue = filterLoc.value;
-        const expValue = filterExp.value;
-        let visibleCount = 0;
+      let allJobs = [];
+      const colorClasses = ['color-1', 'color-2', 'color-3', 'color-4', 'color-5', 'color-6', 'color-7', 'color-8', 'color-9', 'color-10'];
+      let colorIndex = 0;
 
-        jobItems.forEach(item => {
-          const deptMatch = !deptValue || item.dataset.department === deptValue;
-          const locMatch = !locValue || item.dataset.location === locValue;
-          const expMatch = !expValue || item.dataset.experience === expValue;
-
-          if (deptMatch && locMatch && expMatch) {
-            item.style.display = '';
-            visibleCount++;
-          } else {
-            item.style.display = 'none';
-          }
-        });
-
-        jobCount.textContent = visibleCount;
-        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+      // Get random color for job card
+      function getRandomColor() {
+        const color = colorClasses[colorIndex % colorClasses.length];
+        colorIndex++;
+        return color;
       }
 
-      filterDept.addEventListener('change', filterJobs);
-      filterLoc.addEventListener('change', filterJobs);
-      filterExp.addEventListener('change', filterJobs);
-    });
+      // Load jobs from Supabase
+      async function loadJobs() {
+        try {
+          const client = await window.getSupabaseClient();
+
+          const { data, error } = await client
+            .from('jobs')
+            .select('*')
+            .eq('is_published', true)
+            .order('created_at', { ascending: false });
+
+          if (error) {
+            console.error('Error loading jobs:', error);
+            showError();
+            return;
+          }
+
+          if (!data || data.length === 0) {
+            showEmpty();
+            return;
+          }
+
+          allJobs = data;
+          colorIndex = 0; // Reset color index
+          renderJobs(allJobs);
+          setupFilters();
+          hideLoading();
+
+        } catch (err) {
+          console.error('Load error:', err);
+          showError();
+        }
+      }
+
+      function renderJobs(jobs) {
+        const container = document.querySelector('#jobListings .col-12');
+        
+        if (jobs.length === 0) {
+          showEmpty();
+          return;
+        }
+
+        document.getElementById('jobListings').style.display = '';
+        document.getElementById('noResults').style.display = 'none';
+
+        colorIndex = 0; // Reset color for consistent coloring on filter
+        const html = jobs.map(job => {
+          const colorClass = getRandomColor();
+          return `
+            <div class="job-card-horizontal ${colorClass}">
+              <div class="job-header">
+                <div class="job-title-section">
+                  <h3>${escapeHtml(job.title)}</h3>
+                  <p class="job-company">${escapeHtml(job.company)}</p>
+                </div>
+              </div>
+
+              <div class="job-meta">
+                <div class="job-meta-item">
+                  <span class="job-meta-label">Location</span>
+                  <span class="job-meta-value">${escapeHtml(job.location)}</span>
+                </div>
+                <div class="job-meta-item">
+                  <span class="job-meta-label">Experience</span>
+                  <span class="job-meta-value">${escapeHtml(job.experience)}</span>
+                </div>
+                <div class="job-meta-item">
+                  <span class="job-meta-label">Employment Type</span>
+                  <span class="job-meta-value">${escapeHtml(job.employment_type)}</span>
+                </div>
+                ${job.application_deadline ? `
+                <div class="job-meta-item">
+                  <span class="job-meta-label">Deadline</span>
+                  <span class="job-meta-value">${job.application_deadline}</span>
+                </div>
+                ` : ''}
+              </div>
+
+              <div class="job-skills">
+                <span class="job-skills-label">Required Skills</span>
+                <div class="job-skills-list">
+                  ${job.skills.split(',').map(skill => 
+                    `<span class="skill-badge">${escapeHtml(skill.trim())}</span>`
+                  ).join('')}
+                </div>
+              </div>
+
+              <div class="job-description">
+                ${escapeHtml(job.description)}
+              </div>
+
+              <div class="job-actions">
+                <a href="contact.html" class="job-action-btn job-apply-btn">Apply Now</a>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        container.innerHTML = html;
+        document.getElementById('jobCount').textContent = jobs.length;
+      }
+
+      function setupFilters() {
+        const searchInput = document.getElementById('searchKeyword');
+        const filterDept = document.getElementById('filterDepartment');
+        const filterLoc = document.getElementById('filterLocation');
+        const filterExp = document.getElementById('filterExperience');
+        const clearBtn = document.getElementById('clearFiltersBtn');
+
+        // Search functionality
+        if (searchInput) {
+          searchInput.addEventListener('input', filterJobs);
+        }
+        
+        // Filter functionality - only if filter elements exist
+        if (filterDept) filterDept.addEventListener('change', filterJobs);
+        if (filterLoc) filterLoc.addEventListener('change', filterJobs);
+        if (filterExp) filterExp.addEventListener('change', filterJobs);
+
+        // Clear filters
+        if (clearBtn) {
+          clearBtn.addEventListener('click', () => {
+            if (searchInput) searchInput.value = '';
+            if (filterDept) filterDept.value = '';
+            if (filterLoc) filterLoc.value = '';
+            if (filterExp) filterExp.value = '';
+            if (clearBtn) clearBtn.style.display = 'none';
+            renderJobs(allJobs);
+          });
+        }
+
+        function filterJobs() {
+          const searchTerm = searchInput ? searchInput.value.toLowerCase().trim() : '';
+          const deptValue = filterDept ? filterDept.value.toLowerCase() : '';
+          const locValue = filterLoc ? filterLoc.value.toLowerCase() : '';
+          const expValue = filterExp ? filterExp.value.toLowerCase() : '';
+
+          // Show clear button if any filter is active
+          if (clearBtn) {
+            if (searchTerm || deptValue || locValue || expValue) {
+              clearBtn.style.display = 'inline-block';
+            } else {
+              clearBtn.style.display = 'none';
+            }
+          }
+
+          const filtered = allJobs.filter(job => {
+            // Search filter - check title, company, location, skills
+            const matchesSearch = !searchTerm || 
+              job.title.toLowerCase().includes(searchTerm) ||
+              job.company.toLowerCase().includes(searchTerm) ||
+              job.location.toLowerCase().includes(searchTerm) ||
+              job.skills.toLowerCase().includes(searchTerm) ||
+              job.employment_type.toLowerCase().includes(searchTerm) ||
+              job.description.toLowerCase().includes(searchTerm);
+
+            // Location filter - match against job.location
+            const matchesLoc = !locValue || job.location.toLowerCase().includes(locValue);
+
+            // Experience filter - match against job.experience (e.g., "1-3 years", "Fresher (0-2 years)")
+            const matchesExp = !expValue || 
+              (expValue === 'fresher' && job.experience.toLowerCase().includes('fresher|0-2')) ||
+              (expValue === 'mid' && job.experience.toLowerCase().includes('3-7|mid')) ||
+              (expValue === 'senior' && job.experience.toLowerCase().includes('8-15|senior')) ||
+              (expValue === 'executive' && job.experience.toLowerCase().includes('15+|executive'));
+
+            // Employment type filter - match against job.employment_type
+            const matchesDept = !deptValue || job.employment_type.toLowerCase().includes(deptValue);
+
+            return matchesSearch && matchesLoc && matchesExp && matchesDept;
+          });
+
+          if (filtered.length === 0) {
+            showEmpty();
+          } else {
+            renderJobs(filtered);
+          }
+        }
+      }
+
+      function hideLoading() {
+        document.getElementById('loadingState').style.display = 'none';
+      }
+
+      function showEmpty() {
+        hideLoading();
+        document.getElementById('jobListings').style.display = 'none';
+        document.getElementById('noResults').style.display = 'block';
+        document.getElementById('jobCount').textContent = '0';
+      }
+
+      function showError() {
+        hideLoading();
+        document.getElementById('jobListings').style.display = 'none';
+        document.getElementById('errorState').style.display = 'block';
+      }
+
+      function escapeHtml(text) {
+        const map = {
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#039;'
+        };
+        return text.replace(/[&<>"']/g, m => map[m]);
+      }
+
+      // Initialize
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadJobs);
+      } else {
+        loadJobs();
+      }
+    })();
   </script>
+
 </body>
 
 </html>
+
